@@ -1,0 +1,61 @@
+.hero * {
+  overflow-x: visible;
+}
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 4rem;
+  width: 100%;
+}
+.hero img,
+.hero video,
+.hero a {
+  max-width: 100%;
+  width: 90%;
+  margin: 0 !important;
+  object-fit: contain;
+}
+.hero a img {
+  width: 100%;
+}
+.splide__pagination {
+  bottom: 4% !important;
+  left: 80% !important;
+}
+.splide__pagination__page.is-active {
+  background: black !important;
+}
+.splide__pagination__page {
+  height: 12px !important;
+  width: 12px !important;
+}
+.desktop-bg {
+  display: block;
+}
+.mobile-bg {
+  display: none;
+}
+@media screen and (max-width: 800px) {
+  .desktop-bg {
+    display: none;
+  }
+  .mobile-bg {
+    display: block;
+  }
+  .hero {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 728px) {
+  .splide__pagination {
+    bottom: 0.5em !important;
+    left: 0 !important;
+  }
+}
+@media screen and (max-width: 600px) {
+  .hero {
+    margin-top: 0rem;
+  }
+}

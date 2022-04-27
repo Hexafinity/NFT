@@ -1,0 +1,90 @@
+.season {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+  gap: 5rem;
+  border: 2px solid #72defb;
+  border-radius: 25px;
+  padding: 4rem 0rem;
+}
+.season-bot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.left-season,
+.right-season {
+  flex: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.left-season h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #00488a;
+}
+.image-div-season {
+  position: relative;
+}
+.image-div-season p {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4.5rem;
+  font-weight: bold;
+  color: white;
+}
+.right-season {
+  align-items: flex-start;
+  gap: 20px;
+}
+.season-desc {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+.left-desc img {
+  max-width: 100%;
+  object-fit: contain;
+}
+.right-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+}
+.right-desc h2 {
+  color: #00488a;
+  font-size: 2rem;
+}
+.right-desc p {
+  line-height: 1.5;
+  font-size: 1.8rem;
+  color: #00488a;
+}
+@media screen and (max-width: 1168px) {
+  .season {
+    margin-top: 10rem;
+  }
+  .season-bot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .right-season {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .right-season {
+    width: 80%;
+  }
+}
