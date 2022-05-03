@@ -3,10 +3,12 @@
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
+import "@openzeppelin/contracts/access/AccessControlEnumerable.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/utils/Base64.sol";
 
-contract HexaToken is ERC721 {
+contract HexaToken is AccessControlEnumerable, ERC721, ERC721Enumerable {
     uint256 private _currentTokenId = 0; //tokenId will start from 1
 
     constructor(
@@ -64,5 +66,17 @@ contract HexaToken is ERC721 {
             ))));
             
         return string(abi.encodePacked("data:application/json;base64,", json));
-    }    
+    }
+
+  
+    function _beforeTokenTransfer(address from, address to, uint256 tokenId) internal virtual override(ERC721, ERC721Enumerable) {
+        super._beforeTokenTransfer(from, to, tokenId);
+    }
+
+    /**
+    * @dev See {IERC165-supportsInterface}.
+    */
+    function supportsInterface(bytes4 interfaceId) public view virtual override(AccessControlEnumerable, ERC721, ERC721Enumerable) returns (bool) {
+        return super.supportsInterface(interfaceId);
+    }
 }
