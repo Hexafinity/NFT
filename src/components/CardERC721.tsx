@@ -34,6 +34,7 @@ useEffect( () => {
   if(!nftURI) return
 
   const data = base64.decode(nftURI.slice(29))
+  console.log(nftURI);
   const itemInfo = JSON.parse(data)
   const svg = base64.decode(itemInfo.image.slice(26))
   setItemInfo({
